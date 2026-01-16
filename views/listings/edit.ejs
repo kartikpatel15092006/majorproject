@@ -1,0 +1,95 @@
+<% layout('layouts/boilerplate') -%>
+
+<div class="container mt-4">
+
+  <h2 class="mb-4">Edit Listing</h2>
+
+  <form method="POST" class="needs-validation"   action="/listings/<%= listing._id %>?_method=PUT" novalidate>
+
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input 
+        type="text"
+        name="listing[title]"
+        class="form-control"
+        value="<%= listing.title %>"
+        required
+      >
+      <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter a valid title.
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea 
+        name="listing[description]"
+        class="form-control"
+        rows="3"
+        required
+      ><%= listing.description %></textarea>
+      <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter a description
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Image Link</label>
+      <input 
+        type="text"
+        name="listing[image][url]"
+        class="form-control"
+        placeholder="enter image URL/Link"
+        value="<%= listing.image.url %>"
+      >
+      <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter valid url
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input 
+        type="number"
+        name="listing[price]"
+        class="form-control"
+        value="<%= listing.price %>"
+        required
+      >
+       <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter valid price
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Country</label>
+      <input 
+        type="text"
+        name="listing[country]"
+        class="form-control"
+        value="<%= listing.country %>"
+        required
+      >
+       <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter country
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Location</label>
+      <input 
+        type="text"
+        name="listing[location]"
+        class="form-control"
+        value="<%= listing.location %>"
+        required
+      >
+      <div id="validationServer04Feedback" class="invalid-feedback">
+     please enter location
+    </div>
+    </div>
+
+    <button class="btn btn-dark">Save Changes</button>
+
+  </form>
+</div>

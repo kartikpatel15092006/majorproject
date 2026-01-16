@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') -%>
+<form action="/listings/new" method="POST" class="container mt-4 needs-validation"novalidate>
+
+  <h2 class="mb-4">Create a New Listing</h2>
+
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" name="listing[title]" class="form-control" placeholder="enter title" required>
+       <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter a valid title.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea name="listing[description]" class="form-control" rows="3" required></textarea>
+    <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter a description
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Image Link</label>
+    <input type="text" name="listing[image]" class="form-control" placeholder="enter image URL/Link"><div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter valid url
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="number" name="listing[price]" class="form-control" placeholder="enter price" required>
+    <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter valid price
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Country</label>
+    <input type="text" name="listing[country]" class="form-control" placeholder="enter country" required>
+    <div id="validationServer04Feedback" class="invalid-feedback">
+      Please enter country
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Location</label>
+    <input type="text" name="listing[location]" class="form-control" placeholder="enter location" required>
+    <div id="validationServer04Feedback" class="invalid-feedback">
+     please enter location
+    </div>
+  </div>
+
+  <button class="btn btn-dark">Create Listing</button>
+
+</form>

@@ -1,0 +1,55 @@
+<% layout("layouts/boilerplate") %>
+<% if (success && success.length) { %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= success[0] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+<% } %>;
+
+<% if (error && error.length) { %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= error[0] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+<% } %>;
+
+
+
+<div class="container mt-5" style="max-width: 600px;">
+  <h1 class="mb-4 text-center">login on Wanderlust</h1>
+
+  <form action="/login" method="POST" class="needs-validation" novalidate>
+
+    <!-- Username -->
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input name="username" class="form-control" required />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Username required</div>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" required />
+      <div class="invalid-feedback">Password required</div>
+    </div>
+
+    <button class="btn btn-success">login</button>
+  </form>
+</div>
+
+<script>
+(() => {
+  const forms = document.querySelectorAll(".needs-validation");
+  Array.from(forms).forEach(form => {
+    form.addEventListener("submit", event => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add("was-validated");
+    });
+  });
+})();
+</script>

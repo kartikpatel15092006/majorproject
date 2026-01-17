@@ -82,7 +82,7 @@ app.use((req, res, next) => {
 
 app.get("/",(req,res)=>{
 
-    res.send("app working")
+    res.redirect("/listings")
 })
 
 // index route

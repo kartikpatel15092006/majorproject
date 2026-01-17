@@ -237,7 +237,7 @@ res.redirect("/login")
 
 //login 
 
-app.get("/login",(req,res)=>{
+app.get("/login",(req,res,error)=>{
 
     res.render("user/login")
 });
